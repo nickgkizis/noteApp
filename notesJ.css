@@ -1,0 +1,166 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: linear-gradient(135deg, #080a2d, #0b002c);
+    font-family: 'Poppins', sans-serif;
+}
+
+.app-container {
+    width: 350px;
+    height: 600px;
+    margin: 40px auto;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    position: relative;
+}
+
+.date-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8rem;
+    height: 60px;
+    background: linear-gradient(90deg, #6a0865, #6b00f2);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: pulseDate 3s infinite;
+    text-align: center;
+}
+
+@keyframes pulseDate {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Notes Wrapper */
+.notes-wrapper {
+    height: 450px;
+    border-bottom: 3px solid rgba(255, 255, 255, 0.3);
+    overflow-y: auto;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    animation: fadeInUp 1s ease-in-out;
+}
+
+.hidden {
+    display: none !important;    
+}
+
+/* Note styling */
+.note {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(20px);
+    opacity: 0;
+    animation: fadeInNote 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeInNote {
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Note Hover Effects */
+.note:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+    transition: 0.3s;
+}
+
+/* Footer Styling */
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    border-radius: 0 0 15px 15px;
+}
+
+/* Color Options */
+.color-options {
+    display: flex;
+}
+
+.color-btn {
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 50%;
+    margin-left: 5px;
+    cursor: pointer;
+    transition: transform 0.5s ease; 
+    transform-origin: center; 
+}
+
+.color-btn:hover {
+    transform: rotate(180deg);
+    scale: 1.2;
+}
+
+/* Input Field */
+.footer-text {
+    width: 220px;
+    height: 40px;
+    border: none;
+    border-radius: 20px;
+    padding-left: 15px;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+/* Note Delete Button */
+.note_del-btn {
+    background-color: #ff4b5c;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+.note_del-btn:hover {
+    background-color: #ff1e2b;
+    scale: 1.2;
+}
+
+/* Note Text */
+.note-text {
+    width: 200px;
+    font-size: 2rem;
+    color: #fff;
+    transition: color 0.3s;
+}
+
+/* Note Text Strikethrough */
+.note-text.line-through {
+    color: gray; 
+    text-decoration: line-through;
+}
+
+/* Animations for Note Actions */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}

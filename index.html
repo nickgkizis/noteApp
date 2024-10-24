@@ -3,38 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="notesJ.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <title>Notes App</title>
-    <link rel="stylesheet" href="./notes.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
-<body>   
+<body>
     <div class="app-container">
-        <header>
-            <span id="dateTxt" class="date-text">14 Ιουνίου 2024<br>19:16:00</span>
-        </header>
-        <main>
-            <div class="notes-wrapper">
-                <!-- Notes will be inserted here dynamically -->
+        <div id="dateTxt" class="date-text"></div>
+        <div class="notes-wrapper">
+            <div class="note hidden">
+                <input type="checkbox" class="note-check">
+                <span class="note-text"></span>
+                <button class="note_del-btn"><i class="fas fa-trash"></i></button>
             </div>
-        </main>
-        <footer>
-            <div class="footer">
-                <input type="text" class="footer-text" id="inputNote" placeholder="Εισαγωγή σημείωσης">
-                <button type="button" id="addNoteBtn" class="add_note-btn"><i class="fa-solid fa-plus"></i></button>
-            </div>
-        </footer>
-    </div>
-
-    <!-- Hidden note template -->
-    <div class="note hidden">
-        <div class="note-info">
-            <input type="checkbox" class="note-check">
-            <label class="note-text"></label>
         </div>
-        <button type="button" class="note_del-btn"><i class="fa-solid fa-x"></i></button>
+        <div class="footer">
+            <input type="text" id="inputNote" class="footer-text" placeholder="Insert a note...">
+            <div class="color-options">
+                <button class="color-btn" style="background-color: #6e73ff;" data-color="#6e73ff"><i class="fa-solid fa-plus"></i></button>
+                <button class="color-btn" style="background-color: #00c3ff;" data-color="#00c3ff"><i class="fa-solid fa-plus"></i></button>
+                <button class="color-btn" style="background-color: #b01d13;" data-color="#b01d13"><i class="fa-solid fa-plus"></i></button>
+            </div>
+        </div>
     </div>
-
-    <script src="./notesJ.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="notesJ.js"></script>
 </body>
 </html>
